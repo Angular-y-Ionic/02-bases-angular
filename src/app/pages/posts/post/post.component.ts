@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-post',
@@ -6,11 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  @Input('item') mensaje;
+  @Input('item') mensaje: any;
+  @Output() clickPost = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onClick(){
+    this.clickPost.emit(this.mensaje.id);
+  }
 }

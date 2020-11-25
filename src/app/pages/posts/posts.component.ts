@@ -21,4 +21,7 @@ export class PostsComponent implements OnInit {
     //     this.mensajes = post;
     //   });
   }
+  escuchaClick(id){
+    console.log("click en : "+ id);
+  }
 }
